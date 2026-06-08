@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE environments
+.vscode/
+.idea/
+
+# Environment configuration files
+parameters.yaml
+
+# Project logs (ignores the runs folder and all training logs)
+runs/
+*.log
+
+# Model checkpoints (Deep Q-Network weights, etc.)
+*.pth
+*.pkl
+*.h5
