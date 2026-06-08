@@ -1,5 +1,6 @@
 # Reinforcement Learning — From Scratch to Flappy Bird
-A progressive implementation of core Reinforcement Learning algorithms, starting from tabular methods (Q-Learning, SARSA) on the classic CliffWalking environment, all the way to a Deep Q-Network (DQN) that learns to play Flappy Bird.
+
+> A progressive implementation of core Reinforcement Learning algorithms, starting from tabular methods (Q-Learning, SARSA) on the classic CliffWalking environment, all the way to a Deep Q-Network (DQN) that learns to play Flappy Bird.
 ---
 
 ## Implementations
@@ -35,45 +36,45 @@ State (12) → Linear → ReLU → Linear → Q-values (2 actions)
                256 hidden nodes
 Two key innovations over basic Q-Learning:
 
-Experience Replay — Stores past experiences (state, action, reward, next_state, terminated) in a replay buffer. Randomly samples mini-batches during training to break correlation between sequential experiences.
+**Experience Replay** — Stores past experiences (state, action, reward, next_state, terminated) in a replay buffer. Randomly samples mini-batches during training to break correlation between sequential experiences.
 
-Target Network — A frozen copy of the policy network used to compute stable TD targets. Synced with the policy network every 10 steps.
 ---
 
 ## Training Progress (Flappy Bird)
-Episode	Best Reward
-1      	-6.9
-73	    -0.9
-1031	  +0.3
-4411	  +4.3
-10348	  +11.1
-25363	  +21.1
-32607 	+21.2
+Episode 	Best Reward
+* 1      	-6.9
+* 73	    -0.9
+* 1031	  +0.3
+* 4411	  +4.3
+* 10348	  +11.1
+* 25363	  +21.1
+* 32607 	+21.2
 ---
 
 ## Project Structure
-├── Q_Learning.ipynb          # Q-Learning on CliffWalking
-├── SARSA.ipynb               # SARSA on CliffWalking
-├── agent.py                  # DQN Agent (train + test)
-├── dqn.py                    # Neural Network definition
-├── experience_replay.py      # Replay Buffer
-├── game_flappy_bird.py       # Play Flappy Bird manually
-├── parameters.yaml           # Hyperparameters
-└── runs/
-    ├── flappybirdv0.pt       # Trained model weights
-    └── flappybirdv0.log      # Training log
+
+* ├── Q_Learning.ipynb          # Q-Learning on CliffWalking
+* ├── SARSA.ipynb               # SARSA on CliffWalking
+* ├── agent.py                  # DQN Agent (train + test)
+* ├── dqn.py                    # Neural Network definition
+* ├── experience_replay.py      # Replay Buffer
+* ├── game_flappy_bird.py       # Play Flappy Bird manually
+* ├── parameters.yaml           # Hyperparameters
+* └── runs/
+  *   ├── flappybirdv0.pt       # Trained model weights
+  *   └── flappybirdv0.log      # Training log
 ---
 
 ## Hyperparameters (DQN)
-alpha: 0.001
-gamma: 0.99
-epsilon_init: 1.0
-epsilon_min: 0.05
-epsilon_decay: 0.9995
-replay_memory_size: 100000
-mini_batch_size: 32
-network_sync_rate: 10
-reward_threshold: 1000
+* alpha: 0.001
+* gamma: 0.99
+* epsilon_init: 1.0
+* epsilon_min: 0.05
+* epsilon_decay: 0.9995
+* replay_memory_size: 100000
+* mini_batch_size: 32
+* network_sync_rate: 10
+* reward_threshold: 1000
 ---
 
 ## Setup
@@ -90,7 +91,7 @@ python game_flappy_bird.py
 python agent.py flappybirdv0
 
 ### Train from scratch:
-python agent.py flappybirdv0 --train
+> python agent.py flappybirdv0 --train
 ---
 
 ## Concepts Covered
@@ -104,11 +105,11 @@ python agent.py flappybirdv0 --train
  ---
 
  ## Tech Stack 
- Python 
- PyTorch
- Gymnasium
- NumPy
- Pygame
+ * Python 
+ * PyTorch
+ * Gymnasium
+ * NumPy
+ * Pygame
  ---
 
  ## Author
